@@ -39,7 +39,7 @@ class handler(BaseHTTPRequestHandler):
                 return
 
             # traitement avec pyborg
-            completion = openai.Completion.create(engine="text-davinci-001", prompt=message, temperature=0.5, max_tokens=240)
+            completion = openai.Completion.create(engine="text-davinci-001", prompt=message, temperature=0.5, max_tokens=240, frequency_penalty=1.75)
             print('Sending : ' + completion.choices[0].text)
 
             self._set_headers()
